@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: url(./bg.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        #nav {
+            position: relative;
+            border: none;
+            border-radius: 10em;
+            display: flex;
+            list-style: none;
+            background: #f5f5f5;
+            padding: 10px;
+        }
+
+        #nav li a {
+            position: relative;
+            padding: 15px 50px;
+            font: 500 24px '优设标题黑';
+            border: none;
+            outline: none;
+            color: rgb(70, 100, 180);
+            display: inline-block;
+            text-decoration: none;
+            z-index: 3;
+        }
+
+        .slide1,
+        .slide2 {
+            position: absolute;
+            display: inline-block;
+            height: 60px;
+            border-radius: 10em;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1.05);
+        }
+
+        .slide1 {
+            background-color: rgb(170, 190, 255);
+            z-index: 2;
+        }
+
+        .slide2 {
+            opacity: 0;
+            background-color: rgba(170, 190, 255, .5);
+            z-index: 1;
+            box-shadow: 0 0 20px #ffffffaa inset;
+        }
+
+        .squeeze {
+            transform: scale(0.9);
+        }
+
+        .shell{
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+        .box{
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 70px 0 70px 0;
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+        }
+        .box>img{
+            width: 200%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+        .box>span{
+            font: 200 45px '优设标题黑';
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box:hover{
+            flex-basis: 40%;
+        }
+        .box:hover>img{
+            width: 100%;
+            height: 100%;
+        } 
+        .selection {
+                display: block; 
+                width: 640px; 
+                margin: 20px; 
+                border: 1px solid black;
+                background-color: white;
+            }
+            .selection:hover {
+                background-color: rgb(198, 198, 198);
+            }
+            .container{  
+                width: 600px;  
+                height: 240px;
+                margin: 20px auto;  
+                overflow: hidden;  
+                position: relative;  
+            }  
+            .container .imgcss{  
+                animation: scoll 30s linear 0s infinite;  
+            } 
+            .container ul {
+                width:4000px;  
+                left:0;  
+                top:0;  
+                position: absolute;  
+            }
+            /* .container ul:hover {
+                animation-play-state: paused;
+            }  */
+            .container ul li{  
+                float:left;  
+            }  
+            @keyframes scoll{  
+                from{  
+                    left: -50px;
+                }  
+                to{  
+                    left:-2333px;  
+                }  
+            }   
+            .vine{
+                background-image: url('images/3fe15a3e2dd557e5.png');
+                background-repeat: no-repeat;
+                background-size: 800px;
+                background-attachment: fixed;
+                background-position: 400px;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="fzy">
+        <div class="header"></div>
+        <div class="logo">
+            <img src="">
+            <h4>Generative AI</h4>
+        </div>
+    <ul id="nav">
+        <li class="slide1"></li>
+        <li class="slide2"></li>
+        <li><a href="#Introduction">Introduction</a></li>
+        <li><a href="#History">History</a></li>
+        <li><a href="#Examples">Examples</a></li>
+        <li><a href="#Concerns">Concerns</a></li>
+    </ul>
+    <div class="shell">
+        <div class="box">
+            <img src="./fantasy.jpg">
+        </div>
+        <div class="box">
+            <img src="./robot.png">
+        </div>
+        <div class="box">
+            <img src="./minis.png">
+        </div>
+        <div class="box">
+            <img src="./moon.jpg">
+        </div>
+        <div class="box">
+            <img src="./temple.jpg">
+        </div>
+    </div>
+<div class="about">
+        <h3 id="Introduction">Introduction</h3>
+        <p>Generative artificial intelligence (generative AI, GenAI, or GAI) is artificial intelligence capable of generating text, images, videos, or other data using generative models, often in response to prompts. Generative AI models learn the patterns and structure of their input training data and then generate new data that has similar characteristics.
+            Improvements in transformer-based deep neural networks, particularly large language models (LLMs), enabled an AI boom of generative AI systems in the early 2020s. These include chatbots such as ChatGPT, Copilot, Gemini and LLaMA, text-to-image artificial intelligence image generation systems such as Stable Diffusion, Midjourney and DALL-E, and text-to-video AI generators such as Sora. Companies such as OpenAI, Anthropic, Microsoft, Google, and Baidu as well as numerous smaller firms have developed generative AI models.
+            Generative AI has uses across a wide range of industries, including software development, healthcare, finance, entertainment, customer service, sales and marketing, art, writing, fashion, and product design.</p>
+        </div>
+    </div>
+
+<div class="about"><h3 id="History">History</h3></div>
+
+    <div>
+        <div id="TL">
+            <div id="timeline">
+                <div class="timeline_item" style="background-image: url(./img/1957.jpg);">
+                    <div class="timeline_content">
+                        <div class="date">1957</div>
+                        <div class="title">Perceptron</div>
+                        <div class="content">
+                            <p>
+                                Perceptron is an artificial neural network invented by Frank Rosenblatt when he worked at the Cornell Aeronautical Laboratory in 1957. It can be seen as the simplest form of feedforward artificial neural network, which is a binary linear classifier.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline_node"></div>
+                </div>
+                <div class="timeline_item" style="background-image: url(./img/1989.jpg);">
+                    <div class="timeline_content">
+                        <div class="date">1989</div>
+                        <div class="title">Convolutional Neural Networks</div>
+                        <div class="content">
+                            <p>
+                                As early as 1989, LeCun began using convolutional neural networks to recognize handwritten digits at Bell Labs, which is the ancestor of deep convolutional neural networks in current deep learning; In 1998, LeCun proposed the convolutional neural network LeNet5 for character recognition and achieved good results in handwritten digit recognition. Convolutional neural networks draw inspiration from the principles of the animal visual nervous system, which can abstract and understand input images layer by layer.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline_node"></div>
+                </div>
+                <div class="timeline_item" style="background-image: url(./img/2001.jpg);">
+                    <div class="timeline_content" style="text-shadow:none;">
+                        <div class="date" style="color:#f60;">2001</div>
+                        <div class="title" style="color:#000;">Random Forest</div>
+                        <div class="content" style="color:#000;">
+                            <p>
+                                Random forest was proposed by Breiman in 2001 and is an ensemble of multiple decision trees. During training, a new dataset is constructed by randomly sampling samples to train each decision tree. It is easy to implement, has strong interpretability, low computational complexity, and has achieved considerable accuracy in many practical problems. To this day, in many data mining and analysis competitions, such algorithms often become champions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline_node"></div>
+                </div>
+                <div class="timeline_item" style="background-image: url(./img/2010.jpg);">
+                    <div class="timeline_content">
+                        <div class="date">2010</div>
+                        <div class="title">Deep learning</div>
+                        <div class="content">
+                            <p>
+                                Hinton et al. proposed a method for training deep neural networks by using a constrained Boltzmann machine to train each layer of a multi-layer neural network, obtaining initial weights, and then continuing to train the entire neural network. The deep convolutional neural network AlexNet, invented by Hinton's team in 2012, first achieved success in image classification problems and was subsequently applied to various problems in machine vision, including general object detection, face detection, pedestrian detection, face recognition, image segmentation, image edge detection, etc.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline_node"></div>
+                </div>
+                <div class="timeline_item" style="background-image: url(./img/2022.jpg);">
+                    <div class="timeline_content">
+                        <div class="date">2022</div>
+                        <div class="title">ChatGPT</div>
+                        <div class="content">
+                            <p>
+                                ChatGPT is a chatbot program developed by OpenAI and was released on November 30, 2022. It is a natural language processing tool driven by artificial intelligence technology, which can generate answers based on patterns and statistical patterns seen in the pre training stage. It can also interact based on the context of the chat, truly chatting and communicating like humans, and even complete tasks such as writing papers, emails, scripts, copywriting, translation, and code.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline_node"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+        <div class="about">
+            <h3 id="Examples">Examples</h3>
+        </div>       
+        
+        <div id="cjl" class="vine">
+            <section>
+            <div align="left">
+            <section class="selection" onclick='location.href=("ChatGPT.html")'>
+                <article style="display: block; width: 600px; height: 480px; overflow: auto; margin: 20px;">
+                    <h3>
+                        ChatGPT
+                    </h3>
+                    <div class="container">
+                        <ul class="imgcss">
+                            <li>
+                                <img src="images/2601713083925_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2851713102091_.pic.jpg" width="250" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2841713101993_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2801713101592_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2821713101627_.pic_hd.jpg" width="567px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2831713101654_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2601713083925_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2851713102091_.pic.jpg" width="250" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2841713101993_.pic.jpg" height="240px"> 
+                        </ul>
+                    </div>
+                    <p align="left">
+                        ChatGPT (Chat Generative Pre-trained Transformer) is a chatbot developed by OpenAI and launched on November 30, 2022. Based on a large language model, it enables users to refine and steer a conversation towards a desired length, format, style, level of detail, and language. Successive prompts and replies, known as prompt engineering, are considered at each conversation stage as a context. 
+                        <br>
+                        By January 2023, it had become what was then the fastest-growing consumer software application in history, gaining over 100 million users and contributing to the growth of OpenAI's current valuation of $80 billion. ChatGPT's release spurred the release of competing products, including Gemini, Ernie Bot, LLaMA, Claude, and Grok. Microsoft launched Copilot, based on OpenAI's GPT-4. Some observers raised concern about the potential of ChatGPT and similar programs to displace or atrophy human intelligence, enable plagiarism, or fuel misinformation. 
+                        <br>
+                        ChatGPT is available for use online in two versions, one built on GPT-3.5 and the other on GPT-4, both of which are members of OpenAI's proprietary series of generative pre-trained transformer (GPT) models and is fine-tuned for conversational applications using a combination of supervised learning and reinforcement learning from human feedback. ChatGPT was released as a freely available research preview, but due to its popularity, OpenAI now operates the service on a freemium model. It allows users on its free tier to access the GPT-3.5-based version, while the more advanced GPT-4-based version and priority access to newer features are provided to paid subscribers under the commercial name "ChatGPT Plus".
+                        <br>
+                        ChatGPT is credited with starting the AI boom, which has led to ongoing rapid and unprecedented investment in and public attention to the field of artificial intelligence. (From <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank">ChatGpt Wiki</a>)
+                    </p>
+                </article>
+            </section>
+            </div>
+            <div align="right">
+            <section class="selection" onclick='location.href=("GitHub Copilot.html")'>
+                <article style="display: block; width: 600px; height: 480px; overflow: auto; margin: 20px;">
+                    <h3>
+                        GitHub Copilot
+                    </h3>
+                    <div class="container">
+                        <ul class="imgcss">
+                            <li>
+                                <img src="images/2581713082591_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2571713082565_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2661713086949_.pic.jpg" width="453px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2671713087013_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2681713087032_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2581713082591_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2571713082565_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2661713086949_.pic.jpg" width="453px" height="240px"> 
+                        </ul>
+                    </div>
+                    <p align="left">
+                        GitHub Copilot is a code completion tool developed by GitHub (owned by Microsoft) and OpenAI (49% owned by Microsoft) that assists users of Visual Studio Code, Visual Studio, Neovim, and JetBrains integrated development environments (IDEs) by autocompleting code. Currently available by subscription to individual developers and to businesses, the generative artificial intelligence software was first announced by GitHub on 29 June 2021, and works best for users coding in Python, JavaScript, TypeScript, Ruby, and Go. In March 2023 GitHub announced plans for "Copilot X", which will incorporate a chatbot based on GPT-4, as well as support for voice commands, into Copilot. (From <a href="https://en.wikipedia.org/wiki/GitHub_Copilot" target="_blank">GitHub Copilot Wiki</a>)
+                    </p>
+                </article>
+            </section>
+            </div>
+            <div align="left">
+            <section class="selection" onclick='location.href=("Midjourney.html")'>
+                <article style="display: block; width: 600px; height: 480px; overflow: auto; margin: 20px;">
+                    <h3>
+                        Midjourney
+                    </h3>
+                    <div class="container">
+                        <ul class="imgcss">
+                            <li>
+                                <img src="images/2721713098375_.pic_hd.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2551713082386_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2741713099902_.pic.jpg" width="282px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2691713098323_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2701713098338_.pic_hd.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2541713082330_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2721713098375_.pic_hd.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2551713082386_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2741713099902_.pic.jpg" width="282px" height="240px"> 
+                        </ul>
+                    </div>
+                    <p align="left">
+                        Midjourney is a generative artificial intelligence program and service created and hosted by the San Francisco-based independent research lab Midjourney, Inc. Midjourney generates images from natural language descriptions, called prompts, similar to OpenAI's DALL-E and Stability AI's Stable Diffusion. It is one of the technologies of the AI boom.
+                        <br>The tool is currently in open beta, which it entered on July 12, 2022. The Midjourney team is led by David Holz, who co-founded Leap Motion. Holz told The Register in August 2022 that the company was already profitable. Users create artwork with Midjourney using Discord bot commands. (From <a href="https://en.wikipedia.org/wiki/Midjourney" target="_blank">Midjourney Wiki</a>)
+                    </p>
+                </article>
+            </sction>
+            </div>
+            <div align="right">
+            <section class="selection" onclick='location.href=("Sora.html")'>
+                <article style="display: block; width: 600px; height: 480px; overflow: auto; margin: 20px;">
+                    <h3>
+                        Sora
+                    </h3>
+                    <div class="container">
+                        <ul class="imgcss">
+                            <li>
+                                <img src="images/2621713083981_.pic.jpg" width="400px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2631713083989_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2761713100618_.pic.jpg" width="400px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2771713100722_.pic.jpg" width="400px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2781713100761_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2791713100975_.pic.jpg" width="230px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2621713083981_.pic.jpg" width="400px" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2631713083989_.pic.jpg" height="240px"> 
+                            </li>
+                            <li>
+                                <img src="images/2761713100618_.pic.jpg" width="400px" height="240px"> 
+                        </ul>
+                    </div>
+                    <p align="left">
+                        Sora is an upcoming generative artificial intelligence model developed by OpenAI, that specializes in text-to-video generation. The model accepts textual descriptions, known as prompts, from users and generates short video clips corresponding to those descriptions. Prompts can specify artistic styles, fantastical imagery, or real-world scenarios. When creating real-world scenarios, user input may be required to ensure factual accuracy, otherwise features can be added erroneously. Sora is praised for its ability to produce videos with high levels of visual detail, including intricate camera movements and characters that exhibit a range of emotions. Furthermore, the model possesses the functionality to extend existing short videos by generating new content that seamlessly precedes or follows the original clip. As of April 2024, it is unreleased and not yet available to the public. (From <a href="https://en.wikipedia.org/wiki/Sora_(text-to-video_model)" target="_blank">Sora Wiki</a>)
+                    </p>
+                </article>
+            </section>
+            </div>
+        </section>
+        <h1 align="center">
+            Have a try here!
+        </h1>
+        <section style="background: linear-gradient(to left bottom, rgb(98, 0, 255), rgb(195, 45, 185));">
+            <p align="center" style="color: white;">
+                <strong><em>Website of Poe - A free public assistant AI</em></strong>
+            </p>
+            <div align="center">
+                <iframe src="https://poe.com/" width="1200" height="600" frameborder="0">
+                </iframe>
+            </div>
+        </section></div>
+        <div class="about">        
+            <h3 id="Concerns">Concerns</h3>
+            <p>
+                The development of generative AI has raised concerns from governments, businesses, and individuals, resulting in protests, legal actions, calls to pause AI experiments, and actions by multiple governments.
+            </p></div></div>
+
+        
+
+</div>
+<div class="circleBox">
+    <div class="circle">
+        <img src="./job loss.jpeg" alt="">
+        <div class="word">JOB LOSS</div>
+    </div>
+
+        <div class="circle">
+            <img src="./audio deepfakes.jpeg" alt="">
+            <div class="word">AUDIO DEEPFAKES</div>
+        </div>
+            <div class="circle">
+                <img src="./cybercrime.jpeg" alt="">
+                <div class="word">CYBERCRIME</div>
+            </div>
+                <div class="circle">
+                    <img src="./deepfakes.jpeg" alt="">
+                    <div class="word">DEEP FAKES</div>
+                </div>
+                    <div class="circle">
+                        <img src="./journalism.jpeg" alt="">
+                        <div class="word">JOURNALISM</div>
+                    </div>
+                        <div class="circle">
+                            <img src="./racial and gender.jpeg" alt="">
+                            <div class="word">RACIAL/GENDER</div>
+                        </div>
+</div>
+<style>
+
+.circleBox>.circle{
+width: 250px;
+height: 250px;
+position: relative;
+border-radius: 50%;
+overflow: hidden;
+
+}
+.circleBox>.circle>img{
+width: 100%;
+height: 100%;
+}
+.circle>.word{
+width: 100%;
+height: 30px;
+text-align: center;
+background-color: white;
+position: absolute;
+bottom: 0px;
+font-size: 11px;
+}
+.circleBox{
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+
+</style>
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $("#nav a").on("click", function () {
+        var position = $(this).parent().position();
+        var width = $(this).parent().width();
+        $("#nav .slide1").css({ opacity: 1, left: +position.left, width: width });
+    });
+    $("#nav a").on("mouseover", function () {
+        var position = $(this).parent().position();
+        var width = $(this).parent().width();
+        $("#nav .slide2").css({ opacity: 1, left: +position.left, width: width }).addClass("squeeze");
+    });
+    $("#nav a").on("mouseout", function () {
+        $("#nav .slide2").css({ opacity: 0 }).removeClass("squeeze");
+    });
+    var currentWidth = $("#nav li:nth-of-type(3) a").parent("li").width();
+    var current = $("li:nth-of-type(3) a").position();
+    $("#nav .slide1").css({ left: +current.left, width: currentWidth });
+
+    var items;
+        document.addEventListener('DOMContentLoaded', (e) => {
+            items = document.querySelectorAll('.timeline_item > .timeline_content');
+            items.forEach((v, i) => {
+                v.style.right = 'calc(20% - ' + (i * 100) + '%)';
+            });
+        });
+        document.addEventListener('scroll', (e) => {
+            let ratio = (window.scrollY - document.querySelector('#timeline').offsetTop) / document.body.clientHeight;
+            items.forEach((v, i) => {
+                if (i < ratio){
+                    v.style.right = '';
+                    v.style.opacity = '';
+                }else{
+                    v.style.right = 'calc(20% - ' + ((i - ratio) * 100) + '%)';
+                    v.style.opacity = 1 - (i - ratio);
+                }
+            });
+        });
+</script>
